@@ -8,6 +8,7 @@
 #' @param time_range takes either 'short_term', 'medium_term' or 'long_term'. Set to 'short_term' by default.
 #' @param output by default, will return a tibble object. Will allow 'raw' to return the raw endpoint call.
 #' @return tibble with relevant information
+#' @export
 #' @examples
 #' get_my_top()
 get_my_top <- function(tkn,n=20,type='tracks',time_range='short_term',output='tbl'){
