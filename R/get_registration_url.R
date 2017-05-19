@@ -1,6 +1,6 @@
-#' Combine id/secret and return header.
+#' Get Registration URL
 #'
-#' Combine id/secret and return header.
+#' Given scope, generate URL to register a new user using Authorizatino Flow.
 #'
 #' @param scope List describing the kind of access being requested.
 #' @return URL that will request access to a user's Spotify data.

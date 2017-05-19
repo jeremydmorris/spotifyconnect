@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_registration_url.R
 \name{get_registration_url}
 \alias{get_registration_url}
-\title{Combine id/secret and return header.}
+\title{Get Registration URL}
 \usage{
 get_registration_url(scope = c("playlist-read-collaborative",
   "user-library-read", "user-follow-read", "user-read-email",
@@ -15,7 +15,7 @@ get_registration_url(scope = c("playlist-read-collaborative",
 URL that will request access to a user's Spotify data.
 }
 \description{
-Combine id/secret and return header.
+Given scope, generate URL to register a new user using Authorizatino Flow.
 }
 \examples{
 get_registration_url()
