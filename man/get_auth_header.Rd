@@ -4,7 +4,7 @@
 \alias{get_auth_header}
 \title{Combine id/secret and return header.}
 \usage{
-get_auth_header(tkn)
+get_auth_header(tkn, type = "user")
 }
 \arguments{
 \item{tkn}{use saved token info to get header.}

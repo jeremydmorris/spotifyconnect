@@ -2,5 +2,7 @@
 
 export(get_my_top)
 export(get_registration_url)
+export(get_user_details)
 export(list_users)
 export(load_user)
+export(register_user)
