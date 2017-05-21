@@ -2,15 +2,15 @@
 #'
 #' Pull user information and retrieve an access_token using refresh endpoint.
 #'
-#' @param user_file Full path to users's saved authentication info
+#' @param username Just the users's username string.
 #' @return access_token Valid access token
 #' @export
 #' @examples
 #' load_user()
-load_user <- function(user_file){
+load_user <- function(username){
 
-	user_info <- rjson::fromJSON(file=user_file)
+	user_info <- rjson::fromJSON(file=paste0(Sys.getenv('SPOTIFYAPIDIR'),'/',username,'.json'))
 	user_access <- spotify_connect_refresh(user_info)
 
-	return(user_access)
+	return(user_info)
 }

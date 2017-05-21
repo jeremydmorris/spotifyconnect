@@ -4,10 +4,13 @@
 \alias{register_user}
 \title{Register User}
 \usage{
-register_user(redirect_uri)
+register_user(redirect)
+}
+\arguments{
+\item{redirect}{Full URL from authorization process.}
 }
 \value{
-User connection object to be used in further API requests.
+User connection object to be used in further API requests. This function will also call the user profile endpoint to store the username so we can store various information in the environment using the username as a key.
 }
 \description{
 Given full redirec_uri, extract code, register user and return user connection object

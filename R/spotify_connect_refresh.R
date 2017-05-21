@@ -15,8 +15,9 @@ spotify_connect_refresh <- function(tkn){
 	my_token <- httr::content(httr::POST('https://accounts.spotify.com/api/token',my_headers,body=my_body,encode='form'))
 
 	out <- tkn
-	out$access_token <- my_token$access_token
-	out$time_issued <- Sys.time()
+
+	.spotifyconnect_env[[ tkn$username ]]$access_token <- my_token$access_token
+	.spotifyconnect_env[[ tkn$username ]]$access_token_created <- Sys.time()
 
 	return(out)
 }

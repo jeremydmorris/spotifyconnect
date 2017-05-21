@@ -9,6 +9,8 @@
 list_users <- function(){
 
 	folder <- Sys.getenv('SPOTIFYAPIDIR')
+	user_files <- dir(folder)
+	out <- gsub('.json','',user_files)
 
-	return(dir(folder,full.names=TRUE))
+	return(out)
 }
