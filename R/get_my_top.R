@@ -18,16 +18,16 @@ get_my_top <- function(tkn,n=20,type='tracks',time_range='short_term',output='tb
 	out <- my_top
 
 	if( output == 'tbl' && type == 'tracks' ) {
-		out <- lapply(my_top$items,function(x){
-			data.frame(artist=x$artists[[1]]$name,album=x$album$name,track=x$name,track_id=x$id)
+		out <- tibble::as.tibble(plyr::rbind.fill(lapply(my_top$items,function(x){
+			data.frame(artist=x$artists[[1]]$name,album=x$album$name,album_id=x$album$id,track=x$name,track_id=x$id)
 			# data.frame(artist=x$artists$name)
-		}) %>% plyr::rbind.fill() %>% tibble::as.tibble()
+		})))
 	}
 
 	if( output == 'tbl' && type == 'artists' ){
-		out <- lapply(my_top$items,function(x){
+		out <- tibble::as.tibble(plyr::rbind.fill(lapply(my_top$items,function(x){
 			data.frame(id=x$id,name=x$name,followers=x$followers$total,popularity=x$popularity)
-		}) %>% plyr::rbind.fill() %>% tibble::as.tibble()
+		})))
 	}
 
 	return(out)
