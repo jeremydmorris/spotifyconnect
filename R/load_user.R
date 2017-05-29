@@ -10,6 +10,7 @@
 load_user <- function(username){
 
 	user_info <- rjson::fromJSON(file=paste0(Sys.getenv('SPOTIFYAPIDIR'),'/',username,'.json'))
+
 	user_access <- spotify_connect_refresh(user_info)
 
 	return(user_info)

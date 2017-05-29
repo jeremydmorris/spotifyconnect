@@ -4,10 +4,10 @@
 \alias{load_user}
 \title{Load user's authentication information into a variable for use.}
 \usage{
-load_user(user_file)
+load_user(username)
 }
 \arguments{
-\item{user_file}{Full path to users's saved authentication info}
+\item{username}{Just the users's username string.}
 }
 \value{
 access_token Valid access token
