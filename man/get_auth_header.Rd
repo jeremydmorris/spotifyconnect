@@ -8,6 +8,8 @@ get_auth_header(tkn, type = "user")
 }
 \arguments{
 \item{tkn}{use saved token info to get header.}
+
+\item{type}{either startup, app or user depending on the situation.}
 }
 \value{
 object add_headers from httr with correct information.
